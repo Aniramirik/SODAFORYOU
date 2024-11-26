@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soda For You</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4e4d6; /* Desert sand */
+            color: #4a403a; /* Earthy brown */
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #d2b48c; /* Tan */
+            color: #4a403a; /* Earthy brown */
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s;
+        }
+        header:hover {
+            background-color: #c3a37d; /* Slightly darker tan */
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: fadeIn 1s ease;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav a {
+            color: #4a403a; /* Earthy brown */
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #c3a37d; /* Slightly darker tan */
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(to bottom, #f4e4d6, #d2b48c);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero img {
+            max-width: 200px;
+            border-radius: 50%;
+            animation: zoomIn 1.5s ease;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+            animation: fadeIn 2s ease;
+        }
+        .content-section {
+            padding: 60px 30px;
+            text-align: center;
+            animation: slideUp 1s ease;
+        }
+        .content-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .brands {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .brand {
+            width: 200px;
+            padding: 20px;
+            background-color: #d2b48c;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .brand.active ~ .brands .brand {
+            transform: scale(0.9);
+            opacity: 0.8;
+        }
+        .brand:hover {
+            transform: scale(1.05);
+            background-color: #c3a37d;
+        }
+        .products {
+            display: none;
+            margin-top: 20px;
+        }
+        .products img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            transition: transform 0.3s;
+        }
+        .products img:hover {
+            transform: scale(1.05);
+        }
+        footer {
+            background-color: #4a403a; /* Earthy brown */
+            color: #f4e4d6; /* Desert sand */
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer a {
+            color: #d2b48c; /* Tan */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #c3a37d;
+        }
+        button {
+            background-color: #d2b48c; /* Tan */
+            color: #4a403a; /* Earthy brown */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        button:hover {
+            background-color: #c3a37d; /* Slightly darker tan */
+            transform: translateY(-3px);
+        }
+        .brands {
+    gap: 15px; /* Reduce spacing between brands */
+}
+
+.brand {
+    width: 150px; /* Smaller width */
+    padding: 15px; /* Reduce padding */
+}
+
+.products img {
+    width: 35%; /* Smaller product images */
+    margin: 10px auto; /* Center and reduce spacing */
+}
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Soda For You</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#brands">Brands</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="https://via.placeholder.com/200" alt="Brand Logo">
+        <p>Welcome to Soda For You, where creativity meets inspiration! Check out our latest creations and join our journey.</p>
+        <button onclick="window.open('https://www.instagram.com/soda_for_you12/', '_blank')">Follow on Instagram</button>
+    </section>
+
+    <section class="content-section" id="about">
+        <h2>About Us</h2>
+        <p>We are all about creativity, bold designs, and sharing positive vibes. Soda For You is more than just a brand—it's a lifestyle. Explore our journey and stay inspired!</p>
+    </section>
+
+    <section class="content-section" id="brands">
+        <h2>Our Brands</h2>
+        <div class="brands">
+            <div class="brand" onclick="toggleProducts('brand1-products')">
+                Coca Cola
+            </div>
+            <div class="brand" onclick="toggleProducts('brand2-products')">
+             La Cigogne
+            </div>
+        </div>
+        <div id="brand1-products" class="products">
+            <img src="https://elmercado.ma/wp-content/uploads/2023/08/Coca-Cola-Vanille.png" alt="Product 1">
+            <img src="https://www.epicerie-les3gourmets.ca/cdn/shop/files/image_80126205-d6eb-41ee-8492-db3b2c242a4e.png?v=1683502330" alt="Product 2">
+            <img src="checkers515Wx515H-medias-10893662EA-en-shopriteGlobalProductCatalog-20240619032133-removebg-preview.png" alt="Product 2">
+            <img src="Sprite_Lemon_Mint_Canette_Slim_25cL-removebg-preview.png" alt="Product 2">
+        </div>
+        <div id="brand2-products" class="products">
+            <img src="https://cdn.snrtnews.com/sites/default/files/inline-images/la-cigogne-1727864942.jpg" alt="Product 3">
+            <img src="https://shinemarketmaroc.com/wp-content/uploads/2024/10/6111045006736-LIMONADE-LA-CIGOGNE-33CL.png" alt="Product 4">
+        </div>
+    </section>
+
+    <section class="content-section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Got questions or want to collaborate? Drop us a message!</p>
+        <button onclick="window.open('https://www.instagram.com/soda_for_you12/', '_blank')">Message on Instagram</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Soda For You. Made with ❤️. Follow us on <a href="https://www.instagram.com/soda_for_you12/" target="_blank">Instagram</a>.</p>
+    </footer>
+
+    <script>
+        function toggleProducts(id) {
+            const products = document.getElementById(id);
+            const allBrands = document.querySelectorAll('.brand');
+            const allProducts = document.querySelectorAll('.products');
+
+            if (products.style.display === 'none' || !products.style.display) {
+                allProducts.forEach(prod => prod.style.display = 'none');
+                products.style.display = 'block';
+                allBrands.forEach(brand => brand.classList.remove('active'));
+                document.querySelector(`[onclick=\"toggleProducts('${id}')\"]`).classList.add('active');
+            } else {
+                products.style.display = 'none';
+                allBrands.forEach(brand => brand.classList.remove('active'));
+            }
+        }  {
+                products.style.display = 'none';
+            }
+        
+    </script>
+</body>
+</html>
